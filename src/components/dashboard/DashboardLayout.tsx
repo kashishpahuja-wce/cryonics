@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Bell, User, Menu, X } from 'lucide-react';
+import { Bell, User, Menu, X, Mic } from 'lucide-react';
 
 export default function DashboardLayout() {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isVoiceAgentOpen, setIsVoiceAgentOpen] = useState(false);
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard' },
@@ -15,7 +16,7 @@ export default function DashboardLayout() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAF7]">
+    <div className="min-h-screen bg-[#F8FAF7] relative">
       {/* Top Navigation */}
       <nav className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,6 +144,31 @@ export default function DashboardLayout() {
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <Outlet />
       </main>
+
+      {/* Voice Agent UI */}
+      {isVoiceAgentOpen && (
+        <div className="fixed bottom-24 right-6 w-80 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 z-50 flex flex-col items-center text-center animate-in slide-in-from-bottom-5">
+          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-4 relative">
+            <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-20"></div>
+            <Mic size={32} className="text-orange-500 relative z-10" />
+          </div>
+          <h3 className="text-lg font-bold text-gray-900 mb-1">Smart Voice Assistant</h3>
+          <p className="text-sm text-gray-500 mb-6">I can help you check storage status, list produce, or review energy stats.</p>
+          
+          <div className="w-full bg-gray-50 rounded-xl p-4 mb-2">
+            <p className="text-sm text-gray-400 font-medium italic">Voice features coming soon...</p>
+          </div>
+        </div>
+      )}
+
+      {/* Voice Agent FAB Button */}
+      <button 
+        onClick={() => setIsVoiceAgentOpen(!isVoiceAgentOpen)}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50 hover:-translate-y-1"
+        aria-label="Open Voice Agent"
+      >
+        {isVoiceAgentOpen ? <X size={24} /> : <Mic size={24} />}
+      </button>
     </div>
   );
 }

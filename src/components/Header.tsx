@@ -22,7 +22,7 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center">
-            <a href="/dashboard" className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+            <a href="#/dashboard" className="bg-gray-900 text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-colors">
               DASHBOARD
             </a>
           </div>
@@ -46,7 +46,7 @@ export default function Header() {
             <a href="#resources" className="block px-3 py-2 text-gray-700 font-medium hover:bg-orange-50 hover:text-orange-500 rounded-md">Resources</a>
             <a href="#company" className="block px-3 py-2 text-gray-700 font-medium hover:bg-orange-50 hover:text-orange-500 rounded-md">Company</a>
             <div className="pt-2">
-              <a href="/dashboard" className="block w-full text-center bg-gray-900 text-white px-3 py-3 rounded-md font-medium">DASHBOARD</a>
+              <a href="#/dashboard" className="block w-full text-center bg-gray-900 text-white px-3 py-3 rounded-md font-medium">DASHBOARD</a>
             </div>
           </div>
         </div>

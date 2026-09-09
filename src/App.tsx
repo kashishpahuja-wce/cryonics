@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import FarmerDashboard from './components/dashboard/FarmerDashboard';
