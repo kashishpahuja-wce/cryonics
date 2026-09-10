@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage';
 import DashboardLayout from './components/dashboard/DashboardLayout';
 import FarmerDashboard from './components/dashboard/FarmerDashboard';
 import TechnicalDashboard from './components/dashboard/TechnicalDashboard';
+import VendorDashboard from './components/dashboard/VendorDashboard';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<FarmerDashboard />} />
+          <Route path="vendor" element={<VendorDashboard />} />
           <Route path="technical" element={<TechnicalDashboard />} />
         </Route>
       </Routes>

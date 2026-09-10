@@ -9,6 +9,7 @@ export default function DashboardLayout() {
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Vendor Portal', href: '/dashboard/vendor' },
     { name: 'My Produce', href: '#' },
     { name: 'Buyer Requests', href: '#' },
     { name: 'Marketplace', href: '#' },
